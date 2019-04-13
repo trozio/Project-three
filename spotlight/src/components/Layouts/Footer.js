@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+
 import { Row, Col } from 'react-bootstrap';
+
 import '../Layouts/Footer.css';
-export default class Footer extends Component {
+
+class Footer extends Component {
+
    render() {
         return (
+
            <div className="footer-bottom">
               <Row className="show-grid text-center">
                 <Col sx={12} sm={4} className="container-wrapper2">
@@ -18,7 +23,7 @@ export default class Footer extends Component {
                     <h5>Join Our Newsletter</h5>
                     <h6>Spotlight reviews News</h6>
                    <div id="news">
-                    <h5>Check our the Newsletter!</h5>
+                    <h5>Check out the Newsletter!</h5>
                    </div>
                 </Col>
               </Row>
@@ -26,3 +31,5 @@ export default class Footer extends Component {
          );
       }
  }
+
+ export default Footer;

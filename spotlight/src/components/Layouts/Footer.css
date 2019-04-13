@@ -1,6 +1,6 @@
 .footer-bottom {
     position: bottom;
-    background: rgb(128, 0, 53);
+    background: #229988;
     height: 200px;
     width: 100%;
     padding: 40px;
@@ -12,5 +12,5 @@ h5 {
     color: rgb(238, 255, 0);
 }
 h6 {
-    color: white;
+    color: rgb(238, 255, 0);
 }
