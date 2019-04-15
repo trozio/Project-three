@@ -20,6 +20,7 @@
   "homepage": "https://github.com/trozio/Project-three#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "mongojs": "^2.6.0",
     "mongoose": "^5.5.0"
   },
   "devDependencies": {}
