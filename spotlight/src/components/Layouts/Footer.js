@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { SocialIcon } from 'react-social-icons';
 import { Row, Col } from 'react-bootstrap';
 
 import '../Layouts/Footer.css';
@@ -18,6 +18,8 @@ class Footer extends Component {
                 <Col sx={12} sm={4} className="container-wrapper2">
                     <h5>Follow Us On Social Media</h5>
                     <h5>Review Phone Line: 770-555-000</h5>
+                    <h6>Instagram < SocialIcon url="https://www.instagram.com" /></h6>
+                    
                 </Col>
                 <Col sx={12} sm={4} className="container-wrapper2">
                     <h5>Join Our Newsletter</h5>

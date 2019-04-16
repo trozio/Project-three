@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Row, Col, Image } from 'react-bootstrap';
 
 
 class Home extends Component {
@@ -13,6 +13,7 @@ class Home extends Component {
          src="/assets/Product1.png"
          alt="First slide"
        />
+       
        <Carousel.Caption>
          <h3>First slide label</h3>
          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -43,7 +44,24 @@ class Home extends Component {
        </Carousel.Caption>
      </Carousel.Item>
    </Carousel>;
-   
+
+    <Row className="show-grid text-center">
+          <Col xs={6} sm={4} className="person-wrapper">
+            <Image src="assets/chopping.png" roundedCircle className="profile-pic"/>
+            <h3>Hours Of Research</h3>
+            <p>We call the experts, fact check and research so you don't have to.</p>
+          </Col>
+          <Col xs={6} sm={4} className="person-wrapper">
+            <Image src="assets/chopping2.jpg" roundedCircle className="profile-pic"/>
+            <h3>Hands-On Testing</h3>
+            <p>We try, test, and even taste to ensure products and services meet our high standards..</p>
+          </Col>
+          <Col xs={6} sm={4} className="person-wrapper">
+            <Image src="assets/chopping3.jpg" roundedCircle className="profile-pic"/>
+            <h3>Comprehensive Reviews</h3>
+            <p>One size rarely fits all. We help you find the best for your lifestyle..</p>
+          </Col>
+        </Row>
   
             </div>
         )

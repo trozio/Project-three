@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from './components/Layouts/Header';
 import Footer from "./components/Layouts/Footer";
 import Home from "./components/Layouts/Home";
+import login from "./components/Layouts/login";
+import Profile from "./components/Layouts/Profile";
 import reviews from "./components/Layouts/reviews";
 class App extends Component {
   render() {
@@ -11,7 +13,9 @@ class App extends Component {
     <div>
       <Header/>
       <Route exact path="/" component={Home} />
-      <Route exact path="/reviews" component={reviews} />
+      <Route path="/login" component={login} />
+      <Route path="/Profile" component={Profile} />
+      <Route path="/reviews" component={reviews} />
       <Footer/>
 
     </div>
