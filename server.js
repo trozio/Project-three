@@ -34,7 +34,8 @@ app.post("/api/users", function(req, res){
 		email: req.body.email,
 		photo: req.body.photo
 }
-	db.Users.insert(newUser,function(error, results){
+console.log(newUser);
+	db.Users.insert(newUser, function(error, results){
 		if(!error){
 			res.json(newUser);
 			return
