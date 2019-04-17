@@ -31,6 +31,7 @@ app.get("/api/users", function(req, res){
 app.post("/api/users", function(req, res){
 	let newUser = {
 		name: req.body.name,
+		email: req.body.email,
 		photo: req.body.photo
 }
 	db.Users.insert(newUser,function(error, results){
