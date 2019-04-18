@@ -1,6 +1,7 @@
 let express = require("express");
 let app = express();
 let path = require("path");
+let bcrypt = require("bcrypt");
 // let mongoose = require("mongoose");
 let mongojs = require("mongojs");
 // let Users = require("./models/Users.js");
@@ -18,9 +19,6 @@ db.on("error", function(error) {
   console.log("Database Error:", error);
 });
 
-// mongoose.connect('mongodb://localhost/project3', {useNewUrlParser: true});
-
-
 app.get("/api/users", function(req, res){
 	db.Users.find(function(error, results){
 		console.log("hello");
@@ -28,13 +26,31 @@ app.get("/api/users", function(req, res){
 	});
 });
 
+app.post("/api/password", function(req, res){
+	let query = {name: req.body.name};
+	db.Users.find(query, function(error, results){
+
+bcrypt.compare(req.body.password, results[0].password, function(err, response) {
+  if(response) {
+   // Passwords match
+  res.json(results);
+  } else {
+   // Passwords don't match
+   res.send("Incorrect password");
+  }
+});
+
+	});
+});
+
 app.post("/api/users", function(req, res){
+	let hash = bcrypt.hashSync(req.body.password, 10);
 	let newUser = {
 		name: req.body.name,
+		password: hash,
 		email: req.body.email,
 		photo: req.body.photo
 }
-console.log(newUser);
 	db.Users.insert(newUser, function(error, results){
 		if(!error){
 			res.json(newUser);
