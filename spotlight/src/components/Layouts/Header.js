@@ -19,9 +19,10 @@ class Header extends Component {
     </Nav>
     <Nav>
       <Nav.Link eventKey={1} href="/Home">Home</Nav.Link>
-      <Nav.Link eventKey={3} href="/login" > Login/Signup</Nav.Link>
-      <Nav.Link eventKey={4} href="/reviews">Reviews</Nav.Link>
-      <Nav.Link eventKey={2} href="/Profile">Profile</Nav.Link>
+      <Nav.Link eventKey={2} href="/login" > Login</Nav.Link>
+      <Nav.Link eventKey={3} href="/signup" > Signup</Nav.Link>
+      <Nav.Link eventKey={5} href="/reviews">Reviews</Nav.Link>
+      <Nav.Link eventKey={4} href="/Profile">Profile</Nav.Link>
      
      
     </Nav>
