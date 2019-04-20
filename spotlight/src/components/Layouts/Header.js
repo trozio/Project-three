@@ -15,16 +15,16 @@ class Header extends Component {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-    
+
     </Nav>
     <Nav>
-      <Nav.Link eventKey={1} href="/Home">Home</Nav.Link>
+      <Nav.Link eventKey={1} href="/">Home</Nav.Link>
       <Nav.Link eventKey={2} href="/login" > Login</Nav.Link>
       <Nav.Link eventKey={3} href="/signup" > Signup</Nav.Link>
       <Nav.Link eventKey={5} href="/reviews">Reviews</Nav.Link>
       <Nav.Link eventKey={4} href="/Profile">Profile</Nav.Link>
-     
-     
+
+
     </Nav>
   </Navbar.Collapse>
 </Navbar>;
