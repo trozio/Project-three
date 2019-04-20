@@ -7,7 +7,12 @@ class login extends Component {
 
   handleLogin = (event) => {
     event.preventDefault();
-    fetch("/api/password")
+    fetch("/api/password", {
+        method: "POST",
+        data: {
+            email: this.state.email
+        }
+    })
       .then(res => res.json())
       .then(
         (result) => {
