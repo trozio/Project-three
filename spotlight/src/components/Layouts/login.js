@@ -4,13 +4,17 @@ import { FacebookLoginButton } from 'react-social-login-buttons';
 
 
 class login extends Component {
-
+ state ={
+   email: String,
+   password: String
+ }
   handleLogin = (event) => {
     event.preventDefault();
     fetch("/api/password", {
         method: "POST",
         data: {
-            email: this.state.email
+            email: this.state.email,
+            password: this.state.password
         }
     })
       .then(res => res.json())
