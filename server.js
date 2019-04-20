@@ -4,8 +4,8 @@ let path = require("path");
 let bcrypt = require("bcrypt");
 let mongojs = require("mongojs");
 let PORT = process.env.PORT || 3000;
-var databaseUrl = "project3";
-var collections = ["Users"];
+let databaseUrl = "project3";
+let collections = ["Users"];
 
 let db = mongojs(databaseUrl, collections)
 
