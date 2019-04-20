@@ -8,7 +8,7 @@ class login extends Component {
   handleLogin = (event) => {
     event.preventDefault();
     fetch("/api/users")
-      
+      .then(res => res.json())
       .then(
         (result) => {
           // this.setState({
@@ -16,7 +16,7 @@ class login extends Component {
           //   items: result.items
           // });
           console.log(result);
-          
+
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -39,11 +39,11 @@ class login extends Component {
         <Form className="login-form">
           <h2 className="text-center">Welcome</h2>
           <FormGroup>
-             <label>Email</label> 
+             <label>Email</label>
              <Input type="email" placeholder="Email"/>
           </FormGroup>
           <FormGroup>
-             <label>Password</label> 
+             <label>Password</label>
              <Input type="password" placeholder="Password"/>
           </FormGroup>
           <button onClick={this.handleLogin} className="btn-lg btn-dark btn-block">Log in</button>
