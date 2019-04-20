@@ -2,9 +2,7 @@ let express = require("express");
 let app = express();
 let path = require("path");
 let bcrypt = require("bcrypt");
-// let mongoose = require("mongoose");
 let mongojs = require("mongojs");
-// let Users = require("./models/Users.js");
 let PORT = process.env.PORT || 3000;
 var databaseUrl = "project3";
 var collections = ["Users"];
@@ -91,4 +89,4 @@ app.get("*", function(req, res) {
 
 app.listen(PORT, function() {
 	console.log("App listening on port: " + PORT);
-})
+});
