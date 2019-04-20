@@ -32,6 +32,7 @@ app.post("/api/password", function(req, res) {
 	let query = {
 		name: req.body.email
 	};
+	console.log(query);
 	db.Users.find(query, function(error, results) {
 		bcrypt.compare(req.body.password, results[0].password, function(err, response) {
 			if (response) {
