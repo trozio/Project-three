@@ -5,11 +5,21 @@ import { FacebookLoginButton } from 'react-social-login-buttons';
 
 class login extends Component {
  state ={
-   email: String,
-   password: String
+   email: '',
+   password:''
  }
+
+ handleChange = (event) => {
+      this.setState({
+          email: event.target.email,
+          password: event.target.value
+      });
+ }
+
   handleLogin = (event) => {
     event.preventDefault();
+    console.log(this.state.email);
+    console.log(this.state.password);
     fetch("/api/password", {
         method: "POST",
         data: {
@@ -49,11 +59,11 @@ class login extends Component {
           <h2 className="text-center">Welcome</h2>
           <FormGroup>
              <label>Email</label>
-             <Input type="email" placeholder="Email"/>
+             <Input value={this.state.email} onChange={(event) => this.setState({ email: event.target.value })} type="email" placeholder="Email"/>
           </FormGroup>
           <FormGroup>
              <label>Password</label>
-             <Input type="password" placeholder="Password"/>
+             <Input value={this.state.password} onChange={(event) => this.setState({ password: event.target.value })} type="password" placeholder="Password"/>
           </FormGroup>
           <button onClick={this.handleLogin} className="btn-lg btn-dark btn-block">Log in</button>
           <div className="text-center pt-3">Or Continue with your social account</div>
