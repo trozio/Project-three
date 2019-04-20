@@ -7,7 +7,7 @@ class login extends Component {
 
   handleLogin = (event) => {
     event.preventDefault();
-    fetch("/api/users")
+    fetch("/api/password")
       .then(res => res.json())
       .then(
         (result) => {
