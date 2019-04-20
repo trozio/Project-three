@@ -8,6 +8,7 @@ import signup from "./components/Layouts/signup";
 import Profile from "./components/Layouts/Profile";
 import reviews from "./components/Layouts/reviews";
 class App extends Component {
+  
   render() {
     return (
       <Router>

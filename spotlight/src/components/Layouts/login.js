@@ -4,6 +4,33 @@ import { FacebookLoginButton } from 'react-social-login-buttons';
 
 
 class login extends Component {
+
+  handleLogin = (event) => {
+    event.preventDefault();
+    fetch("/api/users")
+      
+      .then(
+        (result) => {
+          // this.setState({
+          //   isLoaded: true,
+          //   items: result.items
+          // });
+          console.log(result);
+          
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+          console.log(error);
+        }
+      )
+  }
+
   render () {
       return (
         <div className="container">
@@ -19,7 +46,7 @@ class login extends Component {
              <label>Password</label> 
              <Input type="password" placeholder="Password"/>
           </FormGroup>
-          <button className="btn-lg btn-dark btn-block">Log in</button>
+          <button onClick={this.handleLogin} className="btn-lg btn-dark btn-block">Log in</button>
           <div className="text-center pt-3">Or Continue with your social account</div>
           <FacebookLoginButton className="mt-3 mb-3"/>
           <div className="text-center">

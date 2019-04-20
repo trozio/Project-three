@@ -5,7 +5,7 @@ let bcrypt = require("bcrypt");
 // let mongoose = require("mongoose");
 let mongojs = require("mongojs");
 // let Users = require("./models/Users.js");
-let PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 3001;
 var databaseUrl = "project3";
 var collections = ["Users"];
 
