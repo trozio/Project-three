@@ -8,11 +8,17 @@ class reviews extends Component {
     rating:"",
     review:""
   }
-  
+
+  fetchPosts = () => {
+      fetch("/api/posts")
+      .then(res => res.json())
+      .then(result => {
+        console.log(result);
+    });
+  }
+
   componentDidMount() {
-    fetch("/api/posts").then(result => {
-      console.log('result');
-    })
+        this.fetchPosts();
   }
 
     render () {
@@ -30,9 +36,9 @@ class reviews extends Component {
         <small className="text-muted">Last updated 3 mins ago</small>
       </Card.Text>
     </Card.Body>
-    
+
   </Card>
-  
+
   <Card>
   <Form inline>
     <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
@@ -50,7 +56,7 @@ class reviews extends Component {
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
-  
+
   <Card className="text-center">
     <Card.Body>
       <Card.Title>Advertising</Card.Title>
