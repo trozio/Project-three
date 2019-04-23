@@ -3,6 +3,18 @@ import React, { Component } from 'react';
 import { Card, CardColumns, Button, Form, FormControl } from 'react-bootstrap'
 
 class reviews extends Component {
+  state={
+    author:"",
+    rating:"",
+    review:""
+  }
+  
+  componentDidMount() {
+    fetch("/api/posts").then(result => {
+      console.log('result');
+    })
+  }
+
     render () {
         return (
            <div>
