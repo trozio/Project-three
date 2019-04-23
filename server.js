@@ -2,6 +2,7 @@ let express = require("express");
 let app = express();
 let path = require("path");
 let bcrypt = require("bcrypt");
+let cookieParser = require("cookie-parser");
 let mongojs = require("mongojs");
 // let Users = require("./models/Users.js");
 let PORT = process.env.PORT || 3001;
@@ -37,13 +38,7 @@ app.post("/api/password", function(req, res) {
 		bcrypt.compare(req.body.password, results[0].password, function(err, response) {
 			if (response) {
 				// Passwords match
-				res.json({
-					name: results[0].name,
-					email: results[0].email,
-					password: results[0].password,
-					id: results[0]._id,
-					status: "Ok"
-				});
+				res.cookie("id", results[0]._id).json(results);
 			} else {
 				// Passwords don't match
 			res.send({message: "Incorrect password"});
