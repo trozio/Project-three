@@ -27,7 +27,7 @@ class login extends Component {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        name: this.state.email,
+        email: this.state.email,
         password: this.state.password
     })
     })

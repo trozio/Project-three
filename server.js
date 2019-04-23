@@ -29,7 +29,7 @@ app.get("/api/users", function(req, res) {
 
 app.post("/api/password", function(req, res) {
 	let query = {
-		name: req.body.name
+		email: req.body.email
 	};
 	console.log(query);
 	console.log(req.body.password);
@@ -51,8 +51,7 @@ app.post("/api/users", function(req, res) {
 	let newUser = {
 		name: req.body.name,
 		password: hash,
-		email: req.body.email,
-		photo: req.body.photo
+		email: req.body.email
 	}
 	db.Users.insert(newUser, function(error, results) {
 		if (!error) {
