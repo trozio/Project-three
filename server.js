@@ -40,7 +40,7 @@ app.post("/api/password", function(req, res) {
 				res.json(results);
 			} else {
 				// Passwords don't match
-				res.send("Incorrect password");
+			res.send({message: "Incorrect password"});
 			}
 		});
 	});
