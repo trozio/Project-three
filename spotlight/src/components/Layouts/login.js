@@ -18,8 +18,6 @@ class login extends Component {
 
   handleLogin = (event) => {
     event.preventDefault();
-    console.log(this.state.email);
-    console.log(this.state.password);
     fetch("/api/password", {
         method: "POST",
         headers: {
@@ -39,6 +37,7 @@ class login extends Component {
           //   items: result.items
           // });
           console.log(result);
+
 
         },
         // Note: it's important to handle errors here

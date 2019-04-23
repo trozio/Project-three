@@ -25,6 +25,7 @@
   "homepage": "https://github.com/trozio/Project-three#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
     "mongojs": "^2.6.0",

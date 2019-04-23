@@ -37,7 +37,13 @@ app.post("/api/password", function(req, res) {
 		bcrypt.compare(req.body.password, results[0].password, function(err, response) {
 			if (response) {
 				// Passwords match
-				res.json(results);
+				res.json({
+					name: results[0].name,
+					email: results[0].email,
+					password: results[0].password,
+					id: results[0]._id,
+					status: "Ok"
+				});
 			} else {
 				// Passwords don't match
 			res.send({message: "Incorrect password"});
