@@ -3,9 +3,10 @@ let app = express();
 let path = require("path");
 let bcrypt = require("bcrypt");
 let mongojs = require("mongojs");
-let PORT = process.env.PORT || 3000;
-let databaseUrl = "project3";
-let collections = ["Users"];
+// let Users = require("./models/Users.js");
+let PORT = process.env.PORT || 3001;
+var databaseUrl = "project3";
+var collections = ["Users"];
 
 let db = mongojs(databaseUrl, collections)
 
@@ -30,6 +31,8 @@ app.post("/api/password", function(req, res) {
 	let query = {
 		name: req.body.name
 	};
+	console.log(query);
+	console.log(req.body.password);
 	db.Users.find(query, function(error, results) {
 		bcrypt.compare(req.body.password, results[0].password, function(err, response) {
 			if (response) {
