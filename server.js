@@ -30,9 +30,10 @@ app.get("/api/users", function(req, res) {
 
 app.post("/api/password", function(req, res) {
 	let query = {
-		name: req.body.email
+		name: req.body.name
 	};
 	console.log(query);
+	console.log(req.body.password);
 	db.Users.find(query, function(error, results) {
 		bcrypt.compare(req.body.password, results[0].password, function(err, response) {
 			if (response) {

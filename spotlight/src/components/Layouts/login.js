@@ -22,10 +22,14 @@ class login extends Component {
     console.log(this.state.password);
     fetch("/api/password", {
         method: "POST",
-        data: {
-            email: this.state.email,
-            password: this.state.password
-        }
+        headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: this.state.email,
+        password: this.state.password
+    })
     })
       .then(res => res.json())
       .then(
