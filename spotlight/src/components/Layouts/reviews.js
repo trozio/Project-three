@@ -4,6 +4,7 @@ import { Card, CardColumns, Button, Form, FormControl } from 'react-bootstrap'
 
 class reviews extends Component {
   state={
+    newPost: [],
     author:"",
     rating:"",
     review:""
@@ -12,9 +13,9 @@ class reviews extends Component {
   fetchPosts = () => {
       fetch("/api/posts")
       .then(res => res.json())
-      .then(result => {
-        console.log(result);
-    });
+      .then(newPost => this.setState({newPost}, () => console.log('newPost fetched', newPost))
+
+    );
   }
 
   componentDidMount() {
