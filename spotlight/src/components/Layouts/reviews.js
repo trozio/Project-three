@@ -13,7 +13,7 @@ class reviews extends Component {
   fetchPosts = () => {
       fetch("/api/posts")
       .then(res => res.json())
-      .then(newPost => this.setState({newPost}, () => console.log('newPost fetched', newPost))
+      .then(newPost => this.setState({newPost}, () => console.log(newPost))
 
     );
   }
