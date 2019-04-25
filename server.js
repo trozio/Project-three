@@ -2,8 +2,9 @@ let express = require("express");
 let app = express();
 let path = require("path");
 let bcrypt = require("bcrypt");
-// let mongoose = require("mongoose");
+let cookieParser = require("cookie-parser");
 let mongojs = require("mongojs");
+let ObjectId = mongojs.ObjectId;
 // let Users = require("./models/Users.js");
 let PORT = process.env.PORT || 3001;
 var databaseUrl = "project3";
@@ -28,20 +29,33 @@ app.get("/api/users", function(req, res) {
 	});
 });
 
+app.post("/api/profile", function(req, res){
+console.log(req.body.id);
+	db.Users.find({id: req.body.id}, function(error, response){
+		if (error) {
+			console.log("API ERROR". error);
+		}
+		else {
+			console.log("success response", response);
+			res.json(response);
+		}
+	});
+});
+
 app.post("/api/password", function(req, res) {
 	let query = {
-		name: req.body.name
+		email: req.body.email
 	};
-	console.log(query);
-	console.log(req.body.password);
+
 	db.Users.find(query, function(error, results) {
 		bcrypt.compare(req.body.password, results[0].password, function(err, response) {
 			if (response) {
 				// Passwords match
-				res.json(results);
+				console.log(results[0]._id);
+				res.cookie("id", results[0]._id).json(results);
 			} else {
 				// Passwords don't match
-				res.send("Incorrect password");
+			res.send({message: "Incorrect password"});
 			}
 		});
 	});
@@ -52,8 +66,7 @@ app.post("/api/users", function(req, res) {
 	let newUser = {
 		name: req.body.name,
 		password: hash,
-		email: req.body.email,
-		photo: req.body.photo
+		email: req.body.email
 	}
 	db.Users.insert(newUser, function(error, results) {
 		if (!error) {
@@ -93,4 +106,4 @@ app.get("*", function(req, res) {
 
 app.listen(PORT, function() {
 	console.log("App listening on port: " + PORT);
-})
+});
