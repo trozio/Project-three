@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Rating} from 'belle';
-// import { Carousel } from 'react-bootstrap';
 import { Card, CardColumns, Button, Form, FormControl, DropdownButton, Dropdown } from 'react-bootstrap'
 
 class reviews extends Component {
@@ -42,11 +40,6 @@ class reviews extends Component {
   </Card>
 
   <Card className='mt-5'>
-  {/* <Form inline>
-    <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
-    <Button type="submit">Submit</Button>
-
-  </Form> */}
   <DropdownButton id="dropdown-basic-button" title="Search">
   <Dropdown.Item href="#/action-1">Clothes</Dropdown.Item>
   <Dropdown.Item href="#/action-2">Electronic</Dropdown.Item>
@@ -57,12 +50,13 @@ class reviews extends Component {
       <Card.Title>Reviews</Card.Title>
       <Card.Text>
         <h2>New Review</h2>
-        <Rating defaultValue={3}></Rating>
         <ul>
            {this.state.newPost.map( newPost =>
+               <div>
            <li key={newPost.id}>{ newPost.author }</li>
            <li key={newPost.id}>{ newPost.rating }</li>
            <li key={newPost.id}>{ newPost.review }</li>
+           </div>
           )}
         </ul>
       </Card.Text>
