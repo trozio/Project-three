@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Rating} from 'belle';
 // import { Carousel } from 'react-bootstrap';
 import { Card, CardColumns, Button, Form, FormControl, DropdownButton, Dropdown } from 'react-bootstrap'
 
@@ -56,6 +57,7 @@ class reviews extends Component {
       <Card.Title>Reviews</Card.Title>
       <Card.Text>
         <h2>New Review</h2>
+        <Rating defaultValue={3}></Rating>
         <ul>
            {this.state.newPost.map( newPost =>
            <li key={newPost.id}>{ newPost.author }</li>
