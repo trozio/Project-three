@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
-// import { Carousel } from 'react-bootstrap';
-import { Card, CardColumns, Button, Form, FormControl } from 'react-bootstrap'
+import { Card, CardColumns, Button, Form, FormControl, DropdownButton, Dropdown } from 'react-bootstrap'
 
 class reviews extends Component {
+  state={
+    newPost: [],
+    author:"",
+    rating:"",
+    review:""
+  }
+
+  fetchPosts = () => {
+      fetch("/api/posts")
+      .then(res => res.json())
+      .then(newPost => this.setState({newPost}, () => console.log(newPost))
+
+    );
+  }
+
+  componentDidMount() {
+        this.fetchPosts();
+  }
+
     render () {
         return (
            <div>
@@ -18,27 +36,36 @@ class reviews extends Component {
         <small className="text-muted">Last updated 3 mins ago</small>
       </Card.Text>
     </Card.Body>
-    
+
   </Card>
-  
-  <Card>
-  <Form inline>
-    <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
-    <Button type="submit">Submit</Button>
-  </Form>
+
+  <Card className='mt-5'>
+  <DropdownButton id="dropdown-basic-button" title="Search">
+  <Dropdown.Item href="#/action-1">Clothes</Dropdown.Item>
+  <Dropdown.Item href="#/action-2">Electronic</Dropdown.Item>
+  <Dropdown.Item href="#/action-3">Music</Dropdown.Item>
+</DropdownButton>
     <Card.Img variant="top" src="assets/Product3.jpg" />
     <Card.Body>
       <Card.Title>Reviews</Card.Title>
       <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
+        <h2>New Review</h2>
+        <ul>
+           {this.state.newPost.map( newPost =>
+               <div>
+           <li key={newPost.id}>{ newPost.author }</li>
+           <li key={newPost.id}>{ newPost.rating }</li>
+           <li key={newPost.id}>{ newPost.review }</li>
+           </div>
+          )}
+        </ul>
       </Card.Text>
     </Card.Body>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>
     </Card.Footer>
   </Card>
-  
+
   <Card className="text-center">
     <Card.Body>
       <Card.Title>Advertising</Card.Title>
