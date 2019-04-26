@@ -89,6 +89,7 @@ app.post("/api/posts", function(req, res) {
 	let newPost = {
 		author: req.body.author,
 		rating: req.body.rating,
+		category: req.body.category,
 		review: req.body.review
 	}
 	db.Posts.insert(newPost, function(error, results) {
