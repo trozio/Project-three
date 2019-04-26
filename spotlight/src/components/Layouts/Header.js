@@ -6,6 +6,12 @@ import '../Layouts/Header.css';
 
 class Header extends Component {
 
+    componentDidMount() {
+         if(document.cookie){
+             console.log("Logged in");
+         }
+    }
+
     render () {
        return (
 
