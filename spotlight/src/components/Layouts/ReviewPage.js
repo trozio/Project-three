@@ -1,4 +1,4 @@
-import React, { Component, Rating } from 'react';
+import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 class ReviewPage extends Component {
     state = {

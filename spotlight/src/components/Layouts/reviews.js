@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardColumns } from 'react-bootstrap'
+import { Card, CardColumns, Form, Button, FormControl } from 'react-bootstrap'
 
 class reviews extends Component {
   state={
@@ -38,8 +38,24 @@ class reviews extends Component {
     </Card.Body>
 
   </Card>
+  
 
   <Card className='mt-5'>
+  <Form.Group controlId="exampleForm.ControlSelect1">
+    <Form.Label><h2>Products Categories</h2></Form.Label>
+            <Form.Control value={this.state.category} onChange={(event) => this.setState({ category: event.target.value })} as="select">
+            <option>Clothes</option>
+            <option>Electronics</option>
+            <option>Networking</option>
+            <option>Software</option>
+            <option>Gaming</option>
+          </Form.Control>
+        </Form.Group>
+        <Form inline>
+    <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
+    <Button type="submit">Submit</Button>
+  </Form>
+
     <Card.Img variant="top" src="assets/Product3.jpg" />
     <Card.Body>
       <Card.Title>Reviews</Card.Title>
