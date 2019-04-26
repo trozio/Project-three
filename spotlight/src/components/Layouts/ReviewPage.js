@@ -7,6 +7,49 @@ class ReviewPage extends Component {
         category: '',
         review: ''
     }
+
+handleSubmit = (event) => {
+  event.preventDefault();
+  fetch("/api/posts", {
+      method: "POST",
+      headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+      author: this.state.author,
+      rating: this.state.rating,
+      category: this.state.category,
+      review: this.state.review
+  })
+  })
+    .then(res => res.json())
+    .then(
+      (result) => {
+        // this.setState({
+        //   isLoaded: true,
+        //   items: result.items
+        // });
+        this.setState({
+            author: '',
+            rating: '',
+            category: '',
+            review: ''
+        })
+        console.log(result);
+        alert("Review submitted!")
+
+      },
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+        console.log(error);
+      }
+    )
+}
+
     render() {
         return (
             <div className="container">
@@ -44,7 +87,7 @@ class ReviewPage extends Component {
           <Form.Control value={this.state.review} onChange={(event) => this.setState({ review: event.target.value })} as="textarea" rows="3" />
         </Form.Group>
       </Form>
-      <Button variant="primary" type="submit">
+      <Button onClick={this.handleSubmit} variant="primary" type="submit">
     Submit
   </Button>
       </div>
