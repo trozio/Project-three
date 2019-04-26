@@ -25,7 +25,7 @@ class reviews extends Component {
         return (
            <div>
           <CardColumns>
-  <Card>
+  <Card className='mt-5'>
   <Card.Body>
       <Card.Title>Advertising</Card.Title>
       <Card.Text>
@@ -40,11 +40,6 @@ class reviews extends Component {
   </Card>
 
   <Card className='mt-5'>
-  <DropdownButton id="dropdown-basic-button" title="Search">
-  <Dropdown.Item href="#/action-1">Clothes</Dropdown.Item>
-  <Dropdown.Item href="#/action-2">Electronic</Dropdown.Item>
-  <Dropdown.Item href="#/action-3">Music</Dropdown.Item>
-</DropdownButton>
     <Card.Img variant="top" src="assets/Product3.jpg" />
     <Card.Body>
       <Card.Title>Reviews</Card.Title>
@@ -66,7 +61,7 @@ class reviews extends Component {
     </Card.Footer>
   </Card>
 
-  <Card className="text-center">
+  <Card className="mt-5">
     <Card.Body>
       <Card.Title>Advertising</Card.Title>
       <Card.Text>

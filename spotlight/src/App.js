@@ -7,6 +7,7 @@ import login from "./components/Layouts/login";
 import signup from "./components/Layouts/signup";
 import Profile from "./components/Layouts/Profile";
 import reviews from "./components/Layouts/reviews";
+import ReviewPage from "./components/Layouts/ReviewPage";
 class App extends Component {
   
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
       <Route path="/signup" component={signup} />
       <Route path="/Profile" component={Profile} />
       <Route path="/reviews" component={reviews} />
+      <Route path="/ReviewPage" component={ReviewPage} />
       <Footer/>
 
     </div>

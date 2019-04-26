@@ -9,7 +9,7 @@ class Footer extends Component {
    render() {
         return (
 
-           <div className="footer-bottom">
+           <div className="footer-bottom" fixed="bottom">
               <Row className="show-grid text-center">
                 <Col sx={12} sm={4} className="container-wrapper2">
                     <h5>Questions</h5>
