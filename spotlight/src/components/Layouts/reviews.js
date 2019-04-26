@@ -44,10 +44,7 @@ class reviews extends Component {
     <Card.Body>
       <Card.Title>Reviews</Card.Title>
       <Card.Text>
-        <h2>New Review</h2>
-        <ul>
-           {this.state.newPost.map( newPost =>
-               <div>
+        <h2>New Review</h2><ul>{this.state.newPost.map( newPost => <div>
            <li key={newPost.id}>{ newPost.author }</li>
            <li key={newPost.id}>{ newPost.rating }</li>
            <li key={newPost.id}>{ newPost.review }</li>
