@@ -56,7 +56,7 @@ handleSubmit = (event) => {
             <div className= "jumbotron mt-5">
               <div className="col-sm-8 mx-auto">
             <Form className="signup-form">
-              <h2 className="text-center">Welcome, Input Your Reviews</h2>
+              <h2 className="text-center">Post your review</h2>
 
   <Form.Group controlId="exampleForm.ControlInput1">
     <Form.Label>Author</Form.Label>

@@ -70,11 +70,13 @@ app.post("/api/users", function(req, res) {
 	}
 	db.Users.insert(newUser, function(error, results) {
 		if (!error) {
-			res.json(newUser);
+			db.Users.find({name: req.body.name}, function(error, user) {
+			res.cookie("id", user[0]._id).json(user);
 			return
-		}
+		});
 		console.log(error);
-	});
+	};
+});
 });
 
 app.get("/api/posts", function(req, res) {
