@@ -9,6 +9,7 @@ class Profile extends Component {
 	}
 
 	getUser = () => {
+        if(document.cookie){
 		fetch("/api/profile", {
 				method: "POST",
 				headers: {
@@ -24,6 +25,7 @@ class Profile extends Component {
 				console.log(result);
 			});
 	}
+}
 
 	componentDidMount() {
 		this.getUser();

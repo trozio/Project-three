@@ -95,6 +95,7 @@ app.get("/api/posts", function(req, res) {
 app.post("/api/posts", function(req, res) {
 	let newPost = {
 		author: req.body.author,
+		name: req.body.name,
 		rating: req.body.rating,
 		category: req.body.category,
 		review: req.body.review

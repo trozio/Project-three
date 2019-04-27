@@ -12,7 +12,7 @@ class Header extends Component {
          }
         else{
              console.log("logged out");
-}
+         }
     }
 
     handleSignout = () => {
