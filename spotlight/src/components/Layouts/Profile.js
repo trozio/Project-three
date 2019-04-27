@@ -36,7 +36,12 @@ class Profile extends Component {
 			<div className = "jumbotron mt-5">
 			<div className = "col-sm-8 mx-auto">
 			<h1 className = "text-center" > PROFILE </h1></div>
-            <tbody><tr><td>First Name</td><td>{this.state.first_name}</td></tr><tr><td>Last Name</td><td>{this.state.last_name}</td></tr><tr><td>Email</td><td>{this.state.email}</td></tr><tr><td>Photo</td><td>{this.state.Photo}</td></tr></tbody></table></div></div>
+			<table className = "table col-md-6 mx-auto">
+			<tbody><tr><td>Name</td><td>{user.name}</td></tr><tr><td>Email</td><td>{user.email}</td></tr></tbody></table></div>
+		)}
+			</div>
+
+
 		)
 	}
 }
