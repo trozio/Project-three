@@ -29,6 +29,11 @@ app.get("/api/users", function(req, res) {
 	});
 });
 
+
+app.get("/api/logout", function(req, res){
+	res.clearCookie("id").send();
+});
+
 app.post("/api/profile", function(req, res){
 console.log(req.body.id);
 	db.Users.find({id: req.body.id}, function(error, response){

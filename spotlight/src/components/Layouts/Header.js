@@ -10,7 +10,15 @@ class Header extends Component {
          if(document.cookie){
              console.log("Logged in");
          }
+        else{
+             console.log("logged out");
+}
     }
+
+    handleSignout = () => {
+        fetch("/api/logout")
+        .then(res => res.json())
+        };
 
     render () {
        return (
@@ -30,6 +38,8 @@ class Header extends Component {
       <Nav.Link eventKey={5} href="/reviews">Reviews</Nav.Link>
       <Nav.Link eventKey={6} href="/ReviewPage">Create</Nav.Link>
      <Nav.Link eventKey={4} href="/Profile">Profile</Nav.Link>
+     <Nav.Link onClick={this.handleSignout} eventKey={7} href="/">Sign Out</Nav.Link>
+
 
 
     </Nav>
