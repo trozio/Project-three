@@ -106,11 +106,11 @@ class reviews extends Component {
        <Card.Body>
          <Card.Title>Reviews</Card.Title>
          <h2>{ newPost.name }</h2>
-           <ul>
-           <li key={newPost.id}>{ newPost.author }</li>
-           <li key={newPost.id}>{ newPost.rating }</li>
-           <li key={newPost.id}>{ newPost.review }</li>
-           </ul>
+
+           <p key={newPost.id}>Author: { newPost.author }</p>
+           <p key={newPost.id}>Rating: { newPost.rating }</p>
+           <p key={newPost.id}>{ newPost.review }</p>
+
        </Card.Body>
        <Card.Footer>
          <small className="text-muted">Last updated 3 mins ago</small>
