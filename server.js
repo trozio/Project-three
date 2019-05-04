@@ -7,8 +7,8 @@ let mongojs = require("mongojs");
 let ObjectId = mongojs.ObjectId;
 // let Users = require("./models/Users.js");
 let PORT = process.env.PORT || 3001;
-var databaseUrl = "project3";
-var collections = ["Users"];
+var databaseUrl = process.env.MONGODB_URI || "mongodb://<heroku_00php1kp>:<Spotlight1>@ds151486.mlab.com:51486/heroku_00php1kp";
+var collections = ["Users", "Posts"];
 
 let db = mongojs(databaseUrl, collections)
 
