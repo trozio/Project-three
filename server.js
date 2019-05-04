@@ -116,7 +116,7 @@ app.post("/api/posts", function(req, res) {
 });
 
 app.get("*", function(req, res) {
-	res.sendFile(path.join(__dirname, "./spotlight/public/index.html"));
+	res.sendFile(path.join(__dirname, "./spotlight/build/index.html"));
 });
 
 app.listen(PORT, function() {
