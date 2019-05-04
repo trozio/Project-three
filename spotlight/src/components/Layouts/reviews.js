@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Card, CardColumns } from 'react-bootstrap'
+import { Card, CardColumns, Form, FormControl, Button } from 'react-bootstrap'
 
 class reviews extends Component {
   state={
     newPost: [],
     author:"",
     rating:"",
-    review:""
+    review:"",
+    category: ""
   }
 
   fetchPosts = () => {
@@ -17,9 +18,49 @@ class reviews extends Component {
     );
   }
 
+  handleFilter = () => {
+      fetch("/api/filter", {
+          method: "POST",
+          headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          category: this.state.category,
+      })
+      })
+        .then(res => res.json())
+        .then(
+          (result) => {
+            // this.setState({
+            //   isLoaded: true,
+            //   items: result.items
+            // });
+            console.log(result);
+            this.setState({
+                category: ''
+            })
+
+
+          },
+
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+            console.log(error);
+          }
+        )
+    }
+  
+
   componentDidMount() {
         this.fetchPosts();
-  }
+  };
 
     render () {
         return (
@@ -38,6 +79,21 @@ class reviews extends Component {
     </Card.Body>
 
   </Card>
+
+  <Form.Label><h2>Search/Filter</h2></Form.Label>
+          <Form.Control value={this.state.category} onChange={(event) => this.setState({ category: event.target.value })} as="select">
+          <option>Clothes</option>
+          <option>Electronics</option>
+          <option>Networking</option>
+          <option>Software</option>
+          <option>Gaming</option>
+        </Form.Control>
+
+      <Form inline>
+  <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
+  <Button onClick={this.handleFilter} type="submit">Submit</Button>
+  </Form>
+
 <div>
  {this.state.newPost.map( newPost =>
      <Card className='mt-5'>

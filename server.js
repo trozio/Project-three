@@ -34,6 +34,12 @@ app.get("/api/logout", function(req, res){
 	res.clearCookie("id").send();
 });
 
+app.post("/api/filter", function(req, res){
+	db.Posts.find({category: req.body.category}, function(error, results){
+		res.json(results);
+	})
+});
+
 app.post("/api/profile", function(req, res){
 console.log(req.body.id);
 	db.Users.find({id: req.body.id}, function(error, response){
