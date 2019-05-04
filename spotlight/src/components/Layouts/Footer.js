@@ -1,0 +1,37 @@
+import React, { Component } from 'react';
+import { SocialIcon } from 'react-social-icons';
+import { Row, Col } from 'react-bootstrap';
+
+import '../Layouts/Footer.css';
+
+class Footer extends Component {
+
+   render() {
+        return (
+
+           <div className="footer-bottom" fixed="bottom">
+              <Row className="show-grid text-center">
+                <Col sx={12} sm={4} className="container-wrapper2">
+                    <h5>Questions</h5>
+                    <h6>info@Spotlight.com</h6>
+                </Col>
+                <Col sx={12} sm={4} className="container-wrapper2">
+                    <h5>Follow Us On Social Media</h5>
+                    <h5>Review Phone Line: 770-555-000</h5>
+                    <h6>Instagram < SocialIcon url="https://www.instagram.com" /></h6>
+                    
+                </Col>
+                <Col sx={12} sm={4} className="container-wrapper2">
+                    <h5>Join Our Newsletter</h5>
+                    <h6>Spotlight reviews News</h6>
+                   <div id="news">
+                    <h5>Check out the Newsletter!</h5>
+                   </div>
+                </Col>
+              </Row>
+            </div>
+         );
+      }
+ }
+
+ export default Footer;
