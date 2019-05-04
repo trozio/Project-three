@@ -6,7 +6,8 @@ class reviews extends Component {
     newPost: [],
     author:"",
     rating:"",
-    review:""
+    review:"",
+    category: ""
   }
 
   fetchPosts = () => {
@@ -17,9 +18,50 @@ class reviews extends Component {
     );
   }
 
+  handleFilter = (event) => {
+      event.preventDefault();
+      fetch("/api/filter", {
+          method: "POST",
+          headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          category: this.state.category,
+      })
+      })
+        .then(res => res.json())
+        .then(
+          (result) => {
+            // this.setState({
+            //   isLoaded: true,
+            //   items: result.items
+            // });
+            console.log(result);
+            this.setState({
+                category: ''
+            })
+
+
+          },
+
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+            console.log(error);
+          }
+        )
+    }
+
+
   componentDidMount() {
         this.fetchPosts();
-  }
+  };
 
     render () {
         return (
@@ -67,15 +109,16 @@ class reviews extends Component {
            <li key={newPost.id}>{ newPost.author }</li>
            <li key={newPost.id}>{ newPost.rating }</li>
            <li key={newPost.id}>{ newPost.review }</li>
-           </div>
+           </ul>
+       </Card.Body>
+       <Card.Footer>
+         <small className="text-muted">Last updated 3 mins ago</small>
+       </Card.Footer>
+     </Card>
           )}
-        </ul>
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
+
+                </div>
+
 
   <Card className="mt-5">
     <Card.Body>

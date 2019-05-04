@@ -29,6 +29,17 @@ app.get("/api/users", function(req, res) {
 	});
 });
 
+
+app.get("/api/logout", function(req, res){
+	res.clearCookie("id").send();
+});
+
+app.post("/api/filter", function(req, res){
+	db.Posts.find({category: req.body.category}, function(error, results){
+		res.json(results);
+	})
+});
+
 app.post("/api/profile", function(req, res){
 console.log(req.body.id);
 	db.Users.find({id: req.body.id}, function(error, response){
@@ -70,11 +81,13 @@ app.post("/api/users", function(req, res) {
 	}
 	db.Users.insert(newUser, function(error, results) {
 		if (!error) {
-			res.json(newUser);
+			db.Users.find({name: req.body.name}, function(error, user) {
+			res.cookie("id", user[0]._id).json(user);
 			return
-		}
+		});
 		console.log(error);
-	});
+	};
+});
 });
 
 app.get("/api/posts", function(req, res) {
@@ -88,6 +101,7 @@ app.get("/api/posts", function(req, res) {
 app.post("/api/posts", function(req, res) {
 	let newPost = {
 		author: req.body.author,
+		name: req.body.name,
 		rating: req.body.rating,
 		category: req.body.category,
 		review: req.body.review

@@ -2,9 +2,7 @@ import React, {Component} from 'react'
 class Profile extends Component {
 
 	state = {
-		first_name: '',
-		last_name: '',
-		email: '',
+		user: [],
 		id: document.cookie
 	}
 
@@ -20,8 +18,8 @@ class Profile extends Component {
 				})
 			})
 			.then(res => res.json())
-			.then(result => {
-				console.log(result);
+			.then(user => {
+				this.setState({user});
 			});
 	}
 
@@ -34,7 +32,7 @@ class Profile extends Component {
 		return ( 
 			<div className = "container" >
 			<div className = "jumbotron mt-5">
-            <div className = "col-sm-8 mx-auto">
+			<div className = "col-sm-8 mx-auto">
 			<h1 className = "text-center" > PROFILE </h1></div>
             <table className = "table col-md-6 mx-auto">
 			<tbody><tr><td>First Name</td><td value={this.state.first_name} ></td></tr>

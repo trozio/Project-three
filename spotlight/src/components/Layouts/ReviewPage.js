@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 class ReviewPage extends Component {
     state = {
         author: '',
+        name: '',
         rating: '',
         category: '',
         review: ''
@@ -18,6 +19,7 @@ handleSubmit = (event) => {
   },
   body: JSON.stringify({
       author: this.state.author,
+      name: this.state.name,
       rating: this.state.rating,
       category: this.state.category,
       review: this.state.review
@@ -56,11 +58,15 @@ handleSubmit = (event) => {
             <div className= "jumbotron mt-5">
               <div className="col-sm-8 mx-auto">
             <Form className="signup-form">
-              <h2 className="text-center">Welcome, Input Your Reviews</h2>
+              <h2 className="text-center">Post your review</h2>
 
   <Form.Group controlId="exampleForm.ControlInput1">
     <Form.Label>Author</Form.Label>
     <Form.Control value={this.state.author} onChange={(event) => this.setState({ author: event.target.value })} type="text" placeholder="John Doe" />
+  </Form.Group>
+  <Form.Group controlId="exampleForm.ControlInput1">
+    <Form.Label>Product Name</Form.Label>
+    <Form.Control value={this.state.name} onChange={(event) => this.setState({ name: event.target.value })} type="text" placeholder="Pencil" />
   </Form.Group>
   <Form.Group controlId="exampleForm.ControlSelect1">
     <Form.Label>Rating</Form.Label>

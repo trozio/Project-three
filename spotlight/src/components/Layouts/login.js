@@ -17,7 +17,7 @@ class login extends Component {
  }
 
   handleLogin = (event) => {
-    event.preventDefault();
+      event.preventDefault();
     fetch("/api/password", {
         method: "POST",
         headers: {
@@ -37,9 +37,14 @@ class login extends Component {
           //   items: result.items
           // });
           console.log(result);
+          this.setState({
+              email: '',
+              password: ''
+          })
 
 
         },
+
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
@@ -68,7 +73,7 @@ class login extends Component {
              <label>Password</label>
              <Input value={this.state.password} onChange={(event) => this.setState({ password: event.target.value })} type="password" placeholder="Password"/>
           </FormGroup>
-          <button onClick={this.handleLogin} className="btn-lg btn-dark btn-block">Log in</button>
+          <button onClick={this.handleLogin} href="/" className="btn-lg btn-dark btn-block">Log in</button>
           <div className="text-center pt-3">Or Continue with your social account</div>
           <FacebookLoginButton className="mt-3 mb-3"/>
           <div className="text-center">
