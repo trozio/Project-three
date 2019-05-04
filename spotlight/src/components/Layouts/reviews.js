@@ -18,7 +18,8 @@ class reviews extends Component {
     );
   }
 
-  handleFilter = () => {
+  handleFilter = (event) => {
+      event.preventDefault();
       fetch("/api/filter", {
           method: "POST",
           headers: {
@@ -56,7 +57,7 @@ class reviews extends Component {
           }
         )
     }
-  
+
 
   componentDidMount() {
         this.fetchPosts();
