@@ -20,6 +20,9 @@ class reviews extends Component {
 
   handleFilter = (event) => {
       event.preventDefault();
+      this.setState({
+          newPost: []
+      });
       fetch("/api/filter", {
           method: "POST",
           headers: {
@@ -39,7 +42,8 @@ class reviews extends Component {
             // });
             console.log(result);
             this.setState({
-                category: ''
+                category: '',
+                newPost: result
             })
 
 
