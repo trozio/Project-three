@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { button, Form, FormGroup, label, Input } from 'reactstrap';
 import { FacebookLoginButton } from 'react-social-login-buttons';
+import { Redirect } from "react-router-dom";
 
 
 class login extends Component {

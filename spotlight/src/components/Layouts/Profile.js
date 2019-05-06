@@ -24,7 +24,10 @@ class Profile extends Component {
 	}
 
 	componentDidMount() {
-		this.getUser();
+		if(document.cookie){
+			this.getUser();
+		};
+
 	};
 
 
