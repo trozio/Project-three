@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { button, Form, FormGroup, label, Input } from 'reactstrap';
+import { button, Form, FormGroup, label, Input, Form.Control } from 'reactstrap';
 import { FacebookLoginButton } from 'react-social-login-buttons';
 
 
@@ -73,6 +73,12 @@ class signup extends Component {
           <FormGroup>
              <label>Email</label>
               <Input value={this.state.email} onChange={(event) => this.setState({ email: event.target.value })} type="text" placeholder="Email"/>
+              <Form.Control
+             required
+             type="text"
+             placeholder="First name"
+             defaultValue="Mark"
+           />
           </FormGroup>
           <FormGroup>
              <label>Password</label>
