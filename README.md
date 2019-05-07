@@ -11,6 +11,6 @@ Spotlight is an application that gives users option to check out reviews about c
 * [mongojs](https://www.npmjs.com/package/mongojs) - open-source cross-platform document-oriented database program
 * [React.js](https://reactjs.org/) - JavaScript library for building user interfaces
 * [reactstrap](https://react-bootstrap.github.io/) - open-source front-end framework for designing websites and web applications
-* [bcrypt.js](http://www.passportjs.org/) - authentication middleware for Node.js
+* [bcrypt.js](https://www.npmjs.com/package/bcrypt-nodejs) - authentication middleware for Node.js
 * [Express.js](http://www.expressjs.com/) - a web application framework for Node.js
 
