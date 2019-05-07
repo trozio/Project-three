@@ -71,19 +71,7 @@ class reviews extends Component {
         return (
            <div>
           <CardColumns>
-  <Card className='mt-5'>
-  <Card.Body>
-      <Card.Title>Advertising</Card.Title>
-      <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
-      </Card.Text>
-      <Card.Text>
-        <small className="text-muted">Last updated 3 mins ago</small>
-      </Card.Text>
-    </Card.Body>
 
-  </Card>
 
   <Form.Label><h2>Search/Filter</h2></Form.Label>
           <Form.Control value={this.state.category} onChange={(event) => this.setState({ category: event.target.value })} as="select">
@@ -95,7 +83,6 @@ class reviews extends Component {
         </Form.Control>
 
       <Form inline>
-  <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
   <Button onClick={this.handleFilter} type="submit">Submit</Button>
   </Form>
 
@@ -121,18 +108,6 @@ class reviews extends Component {
                 </div>
 
 
-  <Card className="mt-5">
-    <Card.Body>
-      <Card.Title>Advertising</Card.Title>
-      <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
-      </Card.Text>
-      <Card.Text>
-        <small className="text-muted">Last updated 3 mins ago</small>
-      </Card.Text>
-    </Card.Body>
-  </Card>
 </CardColumns>
      </div>
         )
