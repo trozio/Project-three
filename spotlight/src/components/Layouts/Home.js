@@ -15,8 +15,8 @@ class Home extends Component {
        />
 
        <Carousel.Caption>
-         <h3>First slide label</h3>
-         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+         <h3>Post your own reviews</h3>
+
        </Carousel.Caption>
      </Carousel.Item>
      <Carousel.Item>
@@ -27,8 +27,7 @@ class Home extends Component {
        />
 
        <Carousel.Caption>
-         <h3>Second slide label</h3>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+         <h3>See what other people have to say</h3>
        </Carousel.Caption>
      </Carousel.Item>
      <Carousel.Item>
@@ -39,8 +38,7 @@ class Home extends Component {
        />
 
        <Carousel.Caption>
-         <h3>Third slide label</h3>
-         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+         <h3>Make product reviews more personal</h3>
        </Carousel.Caption>
      </Carousel.Item>
    </Carousel>;
