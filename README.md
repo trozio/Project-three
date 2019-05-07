@@ -16,6 +16,6 @@ Spotlight is an application that gives users option to check out reviews about c
 
 ## Contributing Authors and Roles
 
-* **helmi tira** - *Front -end Developer*, *JavaScript*, *react.js*, *reactstrap*, *CSS* - [Helmi Tira](https://github.com/htira2001)
+* **Helmi Tira** - *Front -end Developer*, *JavaScript*, *react.js*, *reactstrap*, *CSS* - [Helmi Tira](https://github.com/htira2001)
 * **Daniel L Adelman** - *Back -end Developer*, *JavaScript*, *react.js*, *bcrypt*, *node.js* - [Daniel L Adelman](https://github.com/trozio?tab=repositories)
 
