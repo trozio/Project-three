@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import { button, Form, FormGroup, label, Input } from 'reactstrap';
+import { button, Form, FormGroup, label, Input, FormFeedback, Label} from 'reactstrap';
 import { FacebookLoginButton } from 'react-social-login-buttons';
 
 
 class login extends Component {
  state ={
    email: '',
-   password:''
+   password:'',
+   eValidateTrue: false,
+   eValidateFalse: true,
+   pValidateTrue: false,
+   pValidateFalse: true
  }
 
  handleChange = (event) => {
@@ -18,6 +22,7 @@ class login extends Component {
 
   handleLogin = (event) => {
       event.preventDefault();
+      if(this.state.eValidateTrue === true && this.state.pValidateTrue === true){
     fetch("/api/password", {
         method: "POST",
         headers: {
@@ -57,6 +62,7 @@ class login extends Component {
         }
       )
   }
+}
 
   render () {
       return (
@@ -66,12 +72,14 @@ class login extends Component {
         <Form className="login-form">
           <h2 className="text-center">Welcome</h2>
           <FormGroup>
-             <label>Email</label>
-             <Input value={this.state.email} onChange={(event) => this.setState({ email: event.target.value })} type="email" placeholder="Email"/>
+          <Label for="email">Email</Label>
+          <Input valid= {this.state.eValidateTrue} invalid={this.state.eValidateFalse} value={this.state.email} onChange={(event) => this.setState({ email: event.target.value, eValidateTrue: true, eValidateFalse: false })} type="email" placeholder="Email"/>
+          <FormFeedback tooltip>You cannot leave this field blank</FormFeedback>
           </FormGroup>
           <FormGroup>
-             <label>Password</label>
-             <Input value={this.state.password} onChange={(event) => this.setState({ password: event.target.value })} type="password" placeholder="Password"/>
+          <Label for="password">Password</Label>
+          <Input valid= {this.state.pValidateTrue} invalid={this.state.pValidateFalse} value={this.state.password} onChange={(event) => this.setState({ password: event.target.value, pValidateTrue: true, pValidateFalse: false })} type="password" placeholder="Password"/>
+          <FormFeedback tooltip>You cannot leave this field blank</FormFeedback>
           </FormGroup>
           <button onClick={this.handleLogin} href="/" className="btn-lg btn-dark btn-block">Log in</button>
           <div className="text-center pt-3">Or Continue with your social account</div>
