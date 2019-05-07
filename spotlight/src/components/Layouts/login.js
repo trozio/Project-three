@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { button, Form, FormGroup, label, Input, FormFeedback, Label} from 'reactstrap';
 import { FacebookLoginButton } from 'react-social-login-buttons';
+import {Redirect} from "react-router-dom";
 
 
 class login extends Component {
@@ -10,7 +11,8 @@ class login extends Component {
    eValidateTrue: false,
    eValidateFalse: true,
    pValidateTrue: false,
-   pValidateFalse: true
+   pValidateFalse: true,
+   redirect: false
  }
 
  handleChange = (event) => {
@@ -41,13 +43,15 @@ class login extends Component {
           //   isLoaded: true,
           //   items: result.items
           // });
-          console.log(result);
-          this.setState({
-              email: '',
-              password: ''
-          })
+          if(result){
+              console.log(result);
+              this.setState({
+                  email: '',
+                  password: '',
+                  redirect: true
+              })
 
-
+          }
         },
 
         // Note: it's important to handle errors here
@@ -59,12 +63,16 @@ class login extends Component {
             error
           });
           console.log(error);
-        }
+      }
       )
   }
 }
 
   render () {
+      if(this.state.redirect){
+          return <Redirect to="/reviews" />;
+      }
+
       return (
         <div className="container">
         <div className= "jumbotron mt-5">
