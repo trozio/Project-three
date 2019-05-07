@@ -14,3 +14,7 @@ Spotlight is an application that gives users option to check out reviews about c
 * [bcrypt.js](https://www.npmjs.com/package/bcrypt-nodejs) - authentication middleware for Node.js
 * [Express.js](http://www.expressjs.com/) - a web application framework for Node.js
 
+## Contributing Authors and Roles
+
+* **helmi tira** - *Front -end Developer*, *JavaScript*, *react.js*, *reactstrap*, *CSS* - [Helmi Tira](https://github.com/htira2001)
+
