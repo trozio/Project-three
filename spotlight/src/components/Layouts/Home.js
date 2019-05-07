@@ -13,7 +13,7 @@ class Home extends Component {
          src="/assets/Product1.png"
          alt="First slide"
        />
-       
+
        <Carousel.Caption>
          <h3>First slide label</h3>
          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -21,8 +21,8 @@ class Home extends Component {
      </Carousel.Item>
      <Carousel.Item>
        <img
-         className="d-block w-100" 
-         src="/assets/Product2.jpg"
+         className="d-block w-100"
+         src="/assets/products--large.png"
          alt="Second slide"
        />
 
@@ -62,7 +62,7 @@ class Home extends Component {
             <p>One size rarely fits all. We help you find the best for your lifestyle..</p>
           </Col>
         </Row>
-  
+
             </div>
         )
     }
