@@ -33,7 +33,7 @@ class Home extends Component {
      <Carousel.Item>
        <img
          className="d-block w-100"
-         src="/assets/Product4.jpg"
+         src="/assets/laptops.jpg"
          alt="Third slide"
        />
 
